@@ -36,7 +36,7 @@ gem "bootsnap", require: false
 
 gem "openai", "~> 0.3.0"
 
-gem "ruby-openai", "~> 6.3"
+gem "ruby-openai", "~> 7.3"
 
 gem "dotenv"
 

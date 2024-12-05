@@ -257,7 +257,7 @@ GEM
       rubocop-minitest
       rubocop-performance
       rubocop-rails
-    ruby-openai (6.5.0)
+    ruby-openai (7.3.1)
       event_stream_parser (>= 0.3.0, < 2.0.0)
       faraday (>= 1)
       faraday-multipart (>= 1)
@@ -336,7 +336,7 @@ DEPENDENCIES
   rails (~> 7.2.2)
   redis (>= 4.0.1)
   rubocop-rails-omakase
-  ruby-openai (~> 6.3)
+  ruby-openai (~> 7.3)
   selenium-webdriver
   sprockets-rails
   stimulus-rails
