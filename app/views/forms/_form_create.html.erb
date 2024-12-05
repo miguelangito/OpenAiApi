@@ -1,25 +1,32 @@
-<%= form_with(model: form) do |forms| %>
+<%= form_with(model: form, class: "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4") do |forms| %> 
   <% if form.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(form.errors.count, "error") %> prohibited this form from being saved:</h2>
+    <div class="text-red-500 mb-4"> 
+      <h2 class="font-bold"><%= pluralize(form.errors.count, "error") %> prohibited this form from being saved:</h2>
 
-      <ul>
-        <% post.errors.each do |error| %>
+      <ul class="list-disc list-inside"> 
+        <% form.errors.each do |error| %> 
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
-  <div>
-    <%= forms.label :name, style: "display: block" %>
-    <%= forms.text_field :name %>
+
+  <div class="mb-4">
+    <%= forms.label :name, class: "block text-gray-700 font-bold mb-2" %> 
+    <%= forms.text_field :name, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %> 
   </div>
-  <div>
-    <%= forms.label :description, style: "display: block" %>
-    <%= forms.text_area :description %>
+
+  <div class="mb-4">
+    <%= forms.label :description, class: "block text-gray-700 font-bold mb-2" %> 
+    <%= forms.text_area :description, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-40" %> 
+  </div>
+
+  <div class="mb-4">
+    <%= forms.label :processed_in_job, class: "block text-gray-700 font-bold mb-2" %> 
+    <%= forms.select :processed_in_job, options_for_select([["Is a priority", true], ["Is not a priority", false]]), { include_blank: "Select an option" }, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %> 
   </div>
 
   <div>
-    <%= forms.submit %>
+    <%= forms.submit "Save Form", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline cursor-pointer" %> 
   </div>
 <% end %>

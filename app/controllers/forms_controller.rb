@@ -22,7 +22,10 @@ class FormsController < ApplicationController
   # POST /forms or /forms.json
   def create
     @form = Form.new(form_params)
+    @response = Response.new
 
+    @response.ai_response = OpenAiService.form_request(@form)
+    @response.status = "aproved"
     respond_to do |format|
       if @form.save
         format.html { redirect_to @form, notice: "Form was successfully created." }
